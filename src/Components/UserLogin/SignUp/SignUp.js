@@ -13,11 +13,17 @@ const SignUp = () => {
 
 
 
-
     const naviget = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [comfirmPass, setComfirmPass] = useState('');
+
+
+
+    // User successfully login
+    if (user) {
+        naviget('/service')
+    }
 
 
 

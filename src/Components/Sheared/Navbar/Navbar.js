@@ -1,6 +1,9 @@
 import { Disclosure, Menu } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
+import { signOut } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink, useLocation } from 'react-router-dom'
+import auth from '../../Firebase/Firebase.init';
 
 
 
@@ -10,8 +13,8 @@ function classNames(...classes) {
 }
 const Navbar = () => {
 
-    const location = useLocation();
-
+    const location = useLocation()
+    const [user] = useAuthState(auth)
 
     return (
         <Disclosure
@@ -64,21 +67,21 @@ const Navbar = () => {
 
 
                                         {
-                                            location.pathname.includes('/signup') ? <NavLink
-                                                to={'signup'}
-                                                className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium ${isActive ? 'text-blue-500' : 'text-black'}`)}
-                                            >SignUp</NavLink> : <NavLink
-                                                to={'login'}
-                                                className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium ${isActive ? 'text-blue-500' : 'text-black'}`)}
-                                            >Login</NavLink>
-                                        }
-                                        {/* {
                                             user?.uid ? <NavLink
                                                 to={'login'}
                                                 onClick={() => { signOut(auth) }}
-                                                className={({ isActive }) => (isActive ? 'text-blue-500 px-3 py-2 rounded-md text-xl font-medium ' : 'text-white px-3 py-2 rounded-md text-xl font-medium')}>LogOut</NavLink> :
-                                    
-                                        } */}
+                                                className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium ${isActive ? 'text-blue-500' : 'text-black'}`)}>LogOut</NavLink> :
+
+                                                location.pathname.includes('/signup') ? <NavLink
+                                                    to={'signup'}
+                                                    className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium ${isActive ? 'text-blue-500' : 'text-black'}`)}
+                                                >SignUp</NavLink> : <NavLink
+                                                    to={'login'}
+                                                    className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium ${isActive ? 'text-blue-500' : 'text-black'}`)}
+                                                >Login</NavLink>
+
+
+                                        }
 
                                     </div>
                                 </div>
