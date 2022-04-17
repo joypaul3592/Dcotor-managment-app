@@ -66,8 +66,6 @@ const Service = () => {
                     <p className='mt-5 text-justify'>Otolaryngology is a medical specialty which is focused on the ears, nose, and throat. It is also called otolaryngology-head and neck surgery because specialists are trained in both medicine and surgery.  </p>
                     <button className='py-2 px-12  bg-green-200 rounded mt-7 mb-3 font-semibold'>Book Now</button>
                 </div>
-
-
             </div>
         </div>
     );
