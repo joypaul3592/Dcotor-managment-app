@@ -1,6 +1,6 @@
 import { Disclosure, Menu } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 
 
@@ -9,10 +9,9 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 const Navbar = () => {
-    const location = useLocation()
     // const [user] = useAuthState(auth)
     return (
-        <Disclosure style={location?.pathname?.includes('/about') ? { display: 'none' } : { display: 'block' }}
+        <Disclosure
             as="nav" className=" bg-green-300 shadow-md sticky top-0 z-40">
             {({ open }) => (
                 <>
