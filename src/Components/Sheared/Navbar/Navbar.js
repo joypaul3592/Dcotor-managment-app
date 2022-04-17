@@ -1,6 +1,6 @@
 import { Disclosure, Menu } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 
 
 
@@ -9,10 +9,11 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 const Navbar = () => {
-
+    const location = useLocation()
     // const [user] = useAuthState(auth)
     return (
-        <Disclosure as="nav" style={{ backgroundColor: '#ffaf00' }} className="shadow-md sticky top-0">
+        <Disclosure style={location?.pathname?.includes('/about') ? { display: 'none' } : { display: 'block', backgroundColor: '#AEECC4' }}
+            as="nav" className="shadow-md sticky top-0 z-40">
             {({ open }) => (
                 <>
                     <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -36,7 +37,7 @@ const Navbar = () => {
                                             src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
                                             alt="Workflow"
                                         />
-                                        <h1 className='text-3xl font-bold font-mono text-black mx-4'>Doc<span className=' text-rose-600'>Treat</span></h1>
+                                        <h1 className='text-3xl font-bold font-mono text-black mx-4'>Doc<span className=' text-blue-600'>Treat</span></h1>
                                     </Link>
                                 </div>
                                 <div className="hidden  sm:block sm:ml-6">
@@ -45,6 +46,10 @@ const Navbar = () => {
                                             to={'/'}
                                             className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium ${isActive ? 'text-blue-500' : 'text-black'}`)}
                                         >Home</NavLink>
+                                        <NavLink
+                                            to={'service'}
+                                            className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium ${isActive ? 'text-blue-500' : 'text-black'}`)}
+                                        >Service</NavLink>
                                         <NavLink
                                             to={'blog'}
                                             className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium ${isActive ? 'text-blue-500' : 'text-black'}`)}
