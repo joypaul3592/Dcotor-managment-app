@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-// import './about.css'
+import { Link, useNavigate } from 'react-router-dom';
+import { ArrowLeftIcon } from '@heroicons/react/outline'
+
 const About = () => {
+    const naviget = useNavigate();
     return (
         <div>
             <div className='about-images p-3'>
-                <Link to='/' className='text-xl   font-mono font-bold py-2 px-5 rounded bg-emerald-400 text-white  '>
-                    {/* <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon> */}
-                    <span className='px-2 '>Back</span>
+                <Link to='/ '>
+                    <button onClick={() => naviget(-1)} className='py-2 px-10  bg-green-200 rounded font-xl font-semibold flex items-center justify-between'> <ArrowLeftIcon className='w-5 mr-4'></ArrowLeftIcon>Go Back</button>
                 </Link>
                 <img className='rounded-full w-[200px] h-[190px] mx-auto  border mt-44' src='' alt="" />
             </div>
