@@ -1,6 +1,6 @@
 import { Disclosure, Menu } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 
 
 
@@ -9,7 +9,10 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 const Navbar = () => {
-    // const [user] = useAuthState(auth)
+
+    const location = useLocation();
+
+
     return (
         <Disclosure
             as="nav" className=" bg-green-300 shadow-md sticky top-0 z-40">
@@ -58,11 +61,17 @@ const Navbar = () => {
                                             className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium ${isActive ? 'text-blue-500' : 'text-black'}`)}
                                         >About
                                         </NavLink>
-                                        <NavLink
-                                            to={'login'}
-                                            className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium ${isActive ? 'text-blue-500' : 'text-black'}`)}
-                                        >Login</NavLink>
 
+
+                                        {
+                                            location.pathname.includes('/signup') ? <NavLink
+                                                to={'signup'}
+                                                className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium ${isActive ? 'text-blue-500' : 'text-black'}`)}
+                                            >SignUp</NavLink> : <NavLink
+                                                to={'login'}
+                                                className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium ${isActive ? 'text-blue-500' : 'text-black'}`)}
+                                            >Login</NavLink>
+                                        }
                                         {/* {
                                             user?.uid ? <NavLink
                                                 to={'login'}

@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import SocialLogin from '../SocialLogin/SocialLogin';
 const Login = () => {
 
+    const naviget = useNavigate()
 
     return (
         <div className='mb-24 mx-5'>
@@ -18,20 +21,8 @@ const Login = () => {
                 <div className="btn-container mx-10 mt-10 mb-3">
                     <button className='w-1/2 bg-green-500 shadow-md py-2 text-2xl rounded text-white'>Log In</button>
                 </div>
-                <p className=' font-mono font-medium'>Create New Account? <span className=' text-sky-700'>Sign Up</span></p>
-                <div className="flex items-center justify-between my-4">
-                    <div className="w-[45%] h-[1px] bg-black opacity-20"></div>
-                    <p>or</p>
-                    <div className="w-[45%] h-[1px] bg-black opacity-20"></div>
-                </div>
-                <div className="flex items-center justify-center w-11/12 md:w-7/12 mx-auto bg-slate-50 rounded-lg shadow-md mb-5" >
-                    <img className='w-[45px] mr-2' src="https://pngimg.com/uploads/google/google_PNG19635.png" alt="" />
-                    <h3 className=' font-semibold'>Continue With Google</h3>
-                </div>
-                <div className="flex items-center justify-center w-11/12 md:w-7/12 mx-auto bg-slate-50 rounded-lg shadow-md mb-5" >
-                    <img className='w-[45px] p-1 mr-2' src="https://pngimg.com/uploads/github/github_PNG87.png" alt="" />
-                    <h3 className=' font-semibold'>Continue With GitHub</h3>
-                </div>
+                <p className=' font-mono font-medium'>Create New Account? <span onClick={() => naviget('/signup')} className=' text-sky-700 cursor-pointer'>Sign Up</span></p>
+                <SocialLogin></SocialLogin>
             </div>
         </div>
     );
