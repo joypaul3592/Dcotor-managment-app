@@ -12,8 +12,8 @@ const Navbar = () => {
     const location = useLocation()
     // const [user] = useAuthState(auth)
     return (
-        <Disclosure style={location?.pathname?.includes('/about') ? { display: 'none' } : { display: 'block', backgroundColor: '#AEECC4' }}
-            as="nav" className="shadow-md sticky top-0 z-40">
+        <Disclosure style={location?.pathname?.includes('/about') ? { display: 'none' } : { display: 'block' }}
+            as="nav" className=" bg-green-300 shadow-md sticky top-0 z-40">
             {({ open }) => (
                 <>
                     <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">

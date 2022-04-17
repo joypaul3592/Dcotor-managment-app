@@ -6,6 +6,7 @@ import Blog from './Components/Blog/Blog';
 import About from './Components/About/About';
 import Login from './Components/UserLogin/Login/Login';
 import Service from './Components/Service/Service';
+import Footer from './Components/Sheared/Footer/Footer';
 function App() {
   return (
     <div className="App">
@@ -16,7 +17,8 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
-      </Routes>
+      </Routes>\
+      <Footer></Footer>
     </div>
   );
 }
