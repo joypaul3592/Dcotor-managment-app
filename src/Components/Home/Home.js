@@ -13,7 +13,7 @@ const Home = () => {
                 </div>
                 <img src={ReactSVG} alt="Svg doctro image" />
             </div>
-
+            <Service></Service>
         </div>
     );
 };
