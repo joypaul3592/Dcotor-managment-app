@@ -88,14 +88,14 @@ const SignUp = () => {
 
 
 
-    // User successfully login
+    // User successfully sign up
     if (user) {
         naviget('/service')
         toast("Wow Sign Up Successfully!")
     }
 
 
-
+    // User sign up error
     useEffect((error) => {
         if (error) {
             toast("Opps!! Please Check You Email & Pass")

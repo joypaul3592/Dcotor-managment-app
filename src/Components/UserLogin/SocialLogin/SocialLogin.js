@@ -1,19 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import auth from '../../Firebase/Firebase.init';
 import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 const SocialLogin = () => {
-
+    const naviget = useNavigate()
 
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const [signInWithGithub, Gituser, Gitloading, Giterror] = useSignInWithGithub(auth);
 
-    if (error || Giterror) {
-        toast("Opps!! User Not Found")
-    }
 
+
+    useEffect(() => {
+        if (error || Giterror) {
+            toast("Opps!! User Not Found")
+        }
+    }, [error, Giterror])
+
+
+
+    if (user || Gituser) {
+        naviget('/')
+        toast('Congrass!! You Ase now Login')
+    }
 
 
 

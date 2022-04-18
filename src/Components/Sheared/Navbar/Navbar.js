@@ -16,6 +16,7 @@ const Navbar = () => {
     const location = useLocation()
     const [user] = useAuthState(auth)
 
+
     return (
         <Disclosure
             as="nav" className=" bg-green-300 shadow-md sticky top-0 z-40">
@@ -109,6 +110,7 @@ const Navbar = () => {
             )
             }
         </Disclosure >
+
     );
 };
 
