@@ -6,13 +6,14 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import { XIcon } from '@heroicons/react/outline'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Loading from '../../Sheared/Loading/Loading';
 
 
 
 
 const SignUp = () => {
 
-    const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
 
 
@@ -25,7 +26,6 @@ const SignUp = () => {
     const [emailError, setEmailError] = useState('');
     const [passError, setPassError] = useState('');
     const [comfirmPassError, setComfirmPassError] = useState('');
-
 
 
 
@@ -104,8 +104,10 @@ const SignUp = () => {
 
 
 
-
-
+    // For Loading
+    if (loading) {
+        return <Loading></Loading>
+    };
 
 
 

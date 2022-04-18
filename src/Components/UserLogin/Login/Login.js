@@ -3,15 +3,18 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { XIcon } from '@heroicons/react/outline'
 import auth from '../../Firebase/Firebase.init';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Loading from '../../Sheared/Loading/Loading';
+
 
 const Login = () => {
 
 
 
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
 
 
     const location = useLocation()
@@ -86,7 +89,18 @@ const Login = () => {
         }
     }, [error])
 
+    // for loading
 
+    if (loading) {
+        return <Loading></Loading>
+    }
+
+    // password reset
+    const resetPassword = async () => {
+        console.log(email);
+        await sendPasswordResetEmail(email);
+        toast('Sent Email')
+    }
 
 
     return (
@@ -113,6 +127,7 @@ const Login = () => {
                     <button onClick={handelLogin} className='w-1/2 bg-green-500 shadow-md py-2 text-2xl rounded text-white'>Log In</button>
                 </div>
                 <p className=' font-mono font-medium'>Create New Account? <span onClick={() => naviget('/signup')} className=' text-sky-700 cursor-pointer'>Sign Up</span></p>
+                <p className=' font-mono font-medium'>Forget Password? <span onClick={resetPassword} className=' text-sky-700 cursor-pointer'>Reset Password</span></p>
                 <SocialLogin></SocialLogin>
                 <ToastContainer />
             </div>

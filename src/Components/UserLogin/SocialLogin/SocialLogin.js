@@ -4,6 +4,7 @@ import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/a
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../../Sheared/Loading/Loading';
 
 const SocialLogin = () => {
     const naviget = useNavigate()
@@ -26,6 +27,9 @@ const SocialLogin = () => {
         toast('Congrass!! You Ase now Login')
     }
 
+    if (loading || Gitloading) {
+        return <Loading></Loading>
+    };
 
 
 
