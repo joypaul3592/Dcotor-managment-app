@@ -66,7 +66,6 @@ const Navbar = () => {
                                         >About
                                         </NavLink>
 
-
                                         {
                                             user?.uid ? <NavLink
                                                 to={'login'}
@@ -80,8 +79,6 @@ const Navbar = () => {
                                                     to={'login'}
                                                     className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium ${isActive ? 'text-blue-500' : 'text-black'}`)}
                                                 >Login</NavLink>
-
-
                                         }
 
                                     </div>
@@ -94,16 +91,36 @@ const Navbar = () => {
                         <div className="px-2 pt-2 pb-3 space-y-1">
                             <NavLink
                                 to={'/'}
-                                className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium block ${isActive ? 'text-blue-500' : 'text-black'}`)}>Home</NavLink>
+                                className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium block ${isActive ? 'text-blue-500' : 'text-black'}`)}
+                            >Home</NavLink>
+                            <NavLink
+                                to={'service'}
+                                className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium block ${isActive ? 'text-blue-500' : 'text-black'}`)}
+                            >Service</NavLink>
+                            <NavLink
+                                to={'blog'}
+                                className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium block ${isActive ? 'text-blue-500' : 'text-black'}`)}
+                            >Blog</NavLink>
                             <NavLink
                                 to={'about'}
-                                className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium block ${isActive ? 'text-blue-500' : 'text-black'}`)}>About</NavLink>
-                            <NavLink
-                                to={'Cars'}
-                                className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium block ${isActive ? 'text-blue-500' : 'text-black'}`)}>Cars</NavLink>
-                            <NavLink
-                                to={'login'}
-                                className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium block ${isActive ? 'text-blue-500' : 'text-black'}`)}>Login</NavLink>
+                                className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium block ${isActive ? 'text-blue-500' : 'text-black'}`)}
+                            >About
+                            </NavLink>
+
+                            {
+                                user?.uid ? <NavLink
+                                    to={'login'}
+                                    onClick={() => { signOut(auth) }}
+                                    className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium block ${isActive ? 'text-blue-500' : 'text-black'}`)}>LogOut</NavLink> :
+
+                                    location.pathname.includes('/signup') ? <NavLink
+                                        to={'signup'}
+                                        className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium block ${isActive ? 'text-blue-500' : 'text-black'}`)}
+                                    >SignUp</NavLink> : <NavLink
+                                        to={'login'}
+                                        className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium block ${isActive ? 'text-blue-500' : 'text-black'}`)}
+                                    >Login</NavLink>
+                            }
                         </div>
                     </Disclosure.Panel>
                 </>
