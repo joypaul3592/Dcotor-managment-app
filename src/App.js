@@ -10,17 +10,15 @@ import Footer from './Components/Sheared/Footer/Footer';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import SignUp from './Components/UserLogin/SignUp/SignUp';
 import RequireAuth from './Components/UserLogin/RequireAuth/RequireAuth';
+import CheckOut from './Components/CheckOut/CheckOut';
 function App() {
   return (
     <div className="App">
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/service" element={
-          <RequireAuth>
-            <Service />
-          </RequireAuth>}
-        />
+        <Route path="/service" element={<Service />} />
+        <Route path="/checkout" element={<RequireAuth><CheckOut /></RequireAuth>} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
