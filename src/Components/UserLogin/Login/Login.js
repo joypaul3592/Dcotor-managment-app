@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { XIcon } from '@heroicons/react/outline'
 import auth from '../../Firebase/Firebase.init';
@@ -14,7 +14,7 @@ const Login = () => {
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
 
 
-
+    const location = useLocation()
     const naviget = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -68,12 +68,13 @@ const Login = () => {
     }
 
 
-
+    // requirAuth
+    const from = location.state?.from?.pathname || "/";
 
 
     // User successfully sign up
     if (user) {
-        naviget('/service')
+        naviget(from, { replace: true });
         toast("Wow Sign Up Successfully!")
     }
 
