@@ -16,7 +16,7 @@ const Blog = () => {
 
                         <h3 className='font-semibold text-left mb-3'>2. Other Option For Authentication is :</h3>
                         <p>
-                            <div className="flex w-10/12 items-center justify-between mx-auto">
+                            <div className="block md:flex w-10/12 items-center justify-between mx-auto">
                                 <div className='text-left'>
                                     <li>Parse.</li>
                                     <li>Back4App.</li>
@@ -36,7 +36,7 @@ const Blog = () => {
                     <div className="bg-green-200 p-5 rounded  shadow-lg">
                         <h1 className='w-full bg-gray-200 p-2 text-black text-xl font-mono rounded shadow-lg mb-4'>What other services does firebase provide other than authentication?</h1>
                         <p>
-                            <div className="flex w-10/12 items-center justify-between mx-auto">
+                            <div className="block md:flex w-10/12 items-center justify-between mx-auto">
                                 <div className='text-left'>
                                     <li>Cloud Firestore</li>
                                     <li>Cloud Functions</li>
