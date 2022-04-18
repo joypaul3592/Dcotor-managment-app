@@ -96,8 +96,8 @@ const SignUp = () => {
 
 
     // User sign up error
-    useEffect((error) => {
-        if (error) {
+    useEffect(() => {
+        if (error?.code) {
             toast("Opps!! Please Check You Email & Pass")
         }
     }, [error])

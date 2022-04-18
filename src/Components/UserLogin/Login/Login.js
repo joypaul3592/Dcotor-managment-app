@@ -79,9 +79,9 @@ const Login = () => {
 
 
     // User sign up error
-    useEffect((error) => {
-        if (error) {
-            toast("Opps!! Please Check You Email & Pass")
+    useEffect(() => {
+        if (error?.code) {
+            toast("Opps!! No User Found")
         }
     }, [error])
 
