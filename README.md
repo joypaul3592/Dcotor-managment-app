@@ -1,17 +1,23 @@
-# Getting Started with DocTreat
+# DocTreat
 
-## `Website Name : `
-
-## DocTreat
+## `Website Name : ` DocTreat
 
 ## `Available Live Site Link :`
 
-In the project directory, you can run:
+[DocTreat.com](DocTreat.com)
 
-### `npm run build`
+### `DocTreat Website Features :`
 
-### Code Splitting
+- A Clear Description & Design.
+- Mobile Friendly & Responsive Design.
+- No Loading Issue.
+- Easy To Login & Sign Up.
+- More Functionality
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## `DocTreat Website Techonologies To Build : `
 
-### Analyzing the Bundle Size
+1. React.
+2. Tailwind.
+3. Firebase.
+4. React Firebase Hooks.
+5. Hero Icon
