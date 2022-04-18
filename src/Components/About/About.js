@@ -18,7 +18,7 @@ const About = () => {
                     <h1 className='text-emerald-400 font-mono text-3xl font-bold py-7'>HI! I am Joy paul</h1>
                     <div className="block md:flex ">
                         <h1 className='my-5 font-mono text-xl font-bold bg-green-200 mx-5 p-5 text-left rounded shadow-md'>My first goal is to be A Good Doctor. Because, I have completed my Graduation of MATS. Then My Second Goal is to be A Freelancer.</h1>
-                        <h1 className=' font-mono text-xl font-bold bg-green-200 mx-5 p-5 text-left rounded shadow-md'>Almost everyday I think about freelancing and to be a Good Web-developer. So I am starting to learn it From Programming hero.</h1>
+                        <h1 className='my-5 font-mono text-xl font-bold bg-green-200 mx-5 p-5 text-left rounded shadow-md'>Almost everyday I think about freelancing and to be a Good Web-developer. So I am starting to learn it From Programming hero.</h1>
                     </div>
                 </div>
             </div>

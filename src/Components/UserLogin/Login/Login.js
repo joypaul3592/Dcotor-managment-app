@@ -97,9 +97,14 @@ const Login = () => {
 
     // password reset
     const resetPassword = async () => {
-        console.log(email);
-        await sendPasswordResetEmail(email);
-        toast('Sent Email')
+        if (email === '') {
+            setEmailError('Please Give Me A Varified Email')
+        } else {
+            await sendPasswordResetEmail(email);
+            toast('Sent Email')
+            setEmailError('')
+        }
+
     }
 
 
